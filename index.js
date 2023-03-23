@@ -10,6 +10,10 @@ const {Configuration,OpenAIApi}=require("openai");
 
 const bot=new Telegram(process.env.BOT_KEY, {polling:true});
 
+bot.onText(/\/start/, (msg)=>{
+bot.sendMessage(msg.chat.id, "Chaliye Shuru karte hai!!, Welcome to AI_Guru Chatbot!");
+})
+
 const config=new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
